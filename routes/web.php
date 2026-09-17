@@ -3,6 +3,9 @@
 //Langkah 1: Membuat Route Dasar untuk Aplikasi POS
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\LaporanPenjualanController;
+
 
 // Rute untuk Halaman Utama / Dashboard POS
 Route::get('/', function () {     return '<h1>Selamat Datang di Dashboard POS Toko Kelontong</h1>'; });
@@ -76,4 +79,13 @@ Route::prefix('kasir')->group(function () {
     })->name('kasir.transaksi');
 });
 
+Route::get('/', function () {
+ return view('welcome');
+});
+// Routing menuju Controller
+Route::get('/produk', [ProdukController::class, 'index']);
+Route::get('/produk/{id}', [ProdukController::class, 'show']);
 
+// Routing menuju Controller Laporan Penjualan
+Route::get('/laporan', LaporanPenjualanController::class)->name('laporan');
+Route::get('/laporan/penjualan', LaporanPenjualanController::class)->name('laporan.penjualan');
