@@ -6,7 +6,10 @@ use App\Http\Controllers\LaporanPenjualanController;
 
 // Halaman utama
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+        'nama_pegawai' => 'Budi Santoso',
+        'shift' => 'Pagi (08:00 - 15:00)',
+    ]);
 });
 
 // Rute dengan Parameter Opsional (Mencari produk berdasarkan nama)
@@ -42,21 +45,21 @@ Route::get('/produk-toko', function () {
             'nama' => 'Beras Premium 5 Kg',
             'sku' => 'BRG-001',
             'harga' => 75000,
-            'foto' => 'beras.jpg',
+            'foto' => 'img/beras.jpg',
             'stok' => 25,
         ],
         [
             'nama' => 'Minyak Goreng 1 Liter',
             'sku' => 'MNY-002',
             'harga' => 18000,
-            'foto' => 'minyak-goreng.jpg',
+            'foto' => 'img/minyak-goreng.jpg',
             'stok' => 40,
         ],
         [
             'nama' => 'Gula Pasir 1 Kg',
             'sku' => 'GUL-003',
             'harga' => 16000,
-            'foto' => 'gula.jpg',
+            'foto' => 'img/gula.jpg',
             'stok' => 30,
         ],
     ];

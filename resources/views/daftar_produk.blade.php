@@ -38,7 +38,11 @@
                     <td>{{ $item['nama'] }}</td>
                     <td>{{ $item['sku'] }}</td>
                     <td>Rp {{ number_format($item['harga'], 0, ',', '.') }}</td>
-                    <td>{{ $item['foto'] }}</td>
+                    <td>
+                        <img src="{{ asset($item['foto']) }}"
+                             alt="{{ $item['nama'] }}"
+                             class="img-thumb">
+                    </td>
                     <td>{{ $item['stok'] }}</td>
                 </tr>
             @endforeach
