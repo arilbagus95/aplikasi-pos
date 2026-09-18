@@ -10,7 +10,7 @@ class LaporanPenjualanController extends Controller
             ['barang' => 'Total Penjualan', 'nilai' => 'Rp 100.000.000'],
             ['barang' => 'Transaksi Selesai', 'nilai' => '100 transaksi'],
             ['barang' => 'Produk Terjual', 'nilai' => '100 produk'],
-            ['barang' => 'Rata-rata Transaksi', 'nilai' => 'Rp 1000.000'],
+            ['barang' => 'Rata-rata Transaksi', 'nilai' => 'Rp 100.000'],
         ];
 
         return view('laporan.penjualan', compact('statistik'));
